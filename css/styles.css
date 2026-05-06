@@ -82,16 +82,28 @@ header {
   display: flex;
   gap: 2rem;
 }
+
 .logo-snoopy {
   width: 8rem;
   height: 8rem;
 }
-.footer-lists li {
-  padding: 2rem;
-}
-.footer-lists img {
-  width: 2rem;
+
+.iconos-footer li {
   padding: 0.5rem;
+  width: 50%;
+  height: auto;
+}
+.iconos-footer img {
+  width: 50%;
+  height: auto;
+  padding: 0.5rem;
+}
+.contenedor-iconos {
+  text-align: center;
+  padding: 20px;
+}
+.iconos {
+  margin: 15px;
 }
 /* -------------------------------------------------------------------------- */
 /*                                   COLORES                                  */
