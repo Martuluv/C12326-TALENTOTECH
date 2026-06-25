@@ -31,4 +31,3 @@ export const vaciarCarrito = () => {
   actualizarContador([]);
   mostrarMensaje("Carrito vaciado");
 };
-
