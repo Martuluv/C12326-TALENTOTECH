@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,700;0,800;1,100;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,700;0,800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- CSS CORREGIDO -->
     <link rel="stylesheet" href="../css/styles.css" />
 
-    <title>Martuluv</title>
+    <title>Martuluv - Comunicate con nosotros</title>
   </head>
 
   <body>
@@ -21,15 +20,14 @@
         <a class="logo" href="../index.html">LOGO</a>
       </div>
 
-      <!-- IMG CORREGIDA -->
-      <img src="../img/snoopy.jpeg" alt="logo de snoopy" class="logo-snoopy" />
+      <img src="../img/snoopy.jpeg" alt="logo" class="logo-snoopy" />
 
       <nav class="header-nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./contacto.html">Contacto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
           <li>
-            <a href="./carrito.html" class="carrito-icono">
+            <a href="carrito.html" class="carrito-icono">
               🛒 <span id="contador-carrito">0</span>
             </a>
           </li>
@@ -38,46 +36,31 @@
     </header>
 
     <main>
-      <h1 class="titulo-contacto text-secondary">Contactanos</h1>
+      <h1>Contactanos</h1>
 
-      <p class="parrafo">
-        Si tenes alguna consulta, sugerencia o simplemente queres decirnos hola,
-        no dudes en contactarnos! Estamos siempre dispuestos a escuchar a
-        nuestros clientes y mejorar nuestra tienda para ofrecerte la mejor
-        experiencia de compra posible. Puedes enviarnos un correo electrónico a
-        <br /><br />
+      <p>
+        Si tenés alguna consulta, escribinos a:
         <a href="mailto:marttugnun@gmail.com">marttugnun@gmail.com</a>
-        o llenar el formulario de contacto a continuación. ¡Esperamos saber de
-        vos pronto!
       </p>
 
-      <form class="form-contacto">
-        <div class="grupo-input">
-          <label for="email">Email:</label>
-          <input id="email" type="email" name="email" />
-        </div>
+      <form>
+        <label>Email:</label>
+        <input type="email" />
 
-        <div class="grupo-input">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="message"></textarea>
-        </div>
+        <label>Mensaje:</label>
+        <textarea></textarea>
 
-        <button class="btn bg-secondary text-dark" type="submit">Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </main>
 
     <footer>
       <p>Web realizada por Martina Nuñez</p>
 
-      <nav>
-        <ul class="iconos-footer">
-          <li><img src="../img/whatsapp.png" alt="Whatsapp" /></li>
-          <li><a href="http://web.whatsapp.com">WhatsApp</a></li>
-
-          <li><img src="../img/instagram.png" alt="Instagram" /></li>
-          <li><a href="http://www.instagram.com">Instagram</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><img src="../img/whatsapp.png" alt="whatsapp" /></li>
+        <li><img src="../img/instagram.png" alt="instagram" /></li>
+      </ul>
     </footer>
 
     <script type="module" src="../js/contacto.js"></script>
