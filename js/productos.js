@@ -4,24 +4,24 @@ export const productos = [
     id: "1",
     nombre: "Buzo Frutillita",
     precio: 2999,
-    img: "img/frutillita.jpeg",
+    img: "./img/frutillita.jpeg",
   },
   {
     id: "2",
     nombre: "Remera hello kitty",
     precio: 1999,
-    img: "img/hellokitty.jpeg",
+    img: "./img/hellokitty.jpeg",
   },
   {
     id: "3",
     nombre: "Remera pochacco",
     precio: 1999,
-    img: "img/pochacco.jpeg",
+    img: "./img/pochacco.jpeg",
   },
   {
     id: "4",
     nombre: "Campera Radical Optimism",
     precio: 4999,
-    img: "img/radicaloptimism.jpeg",
+    img: "./img/radicaloptimism.jpeg",
   },
 ];
