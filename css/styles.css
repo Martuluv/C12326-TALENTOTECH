@@ -44,7 +44,7 @@ h2 {
 
 .btn {
   background-color: #1b032c;
-  color: #f9f6fb;
+  color: #efeef4;
   padding: 1rem 1rem;
   font-weight: bold;
   border: none;
@@ -54,13 +54,19 @@ h2 {
 
 footer,
 header {
-  background-color: #1b032c;
+  background-image: url("../img/ariana.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: #f9f6fb;
   padding: 1rem 0;
-  text-align: center;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  position: relative;
 }
 
 .div-logo {
@@ -118,7 +124,7 @@ header {
   color: #1b032c;
 }
 .text-dark {
-  color: #eee6f4;
+  color: #60119c;
 }
 .text-secondary {
   color: #22063c;
@@ -232,4 +238,34 @@ header {
 
 .card:hover img {
   transform: scale(1.08);
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav a {
+  color: #f9f6fb;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* hover tipo botón */
+.header-nav a:hover {
+  background-color: #ffffff;
+  color: #1b032c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* efecto carrito un poquito más destacado */
+.carrito-icono {
+  background-color: rgba(255, 255, 255, 0.15);
 }
