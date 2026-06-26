@@ -4,7 +4,8 @@ import {
   eliminarCarritoStorage,
 } from "./storage.js";
 
-import { actualizarContador, mostrarMensaje } from "./ui.js";
+import { actualizarContador } from "./ui.js";
+import { mostrarNotificacion } from "./ui.js";
 
 export const agregarAlCarrito = (producto) => {
   const carrito = obtenerCarrito();
@@ -13,7 +14,7 @@ export const agregarAlCarrito = (producto) => {
 
   guardarCarrito(carrito);
   actualizarContador(carrito);
-  mostrarMensaje("Producto agregado al carrito");
+  mostrarNotificacion("🛒 Producto agregado al carrito");
 };
 
 export const eliminarProducto = (indice) => {
@@ -23,11 +24,11 @@ export const eliminarProducto = (indice) => {
 
   guardarCarrito(carrito);
   actualizarContador(carrito);
-  mostrarMensaje("Producto eliminado");
+  mostrarNotificacion("🛒 Producto eliminado del carrito");
 };
 
 export const vaciarCarrito = () => {
   eliminarCarritoStorage();
   actualizarContador([]);
-  mostrarMensaje("Carrito vaciado");
+  mostrarNotificacion("🛒 Carrito vaciado");
 };

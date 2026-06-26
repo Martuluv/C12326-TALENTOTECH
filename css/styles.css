@@ -100,9 +100,15 @@ header {
   height: auto;
 }
 .iconos-footer img {
-  width: 50%;
-  height: auto;
-  padding: 0.5rem;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  padding: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.iconos-footer img:hover {
+  transform: scale(1.2);
 }
 .contenedor-iconos {
   text-align: center;
@@ -268,4 +274,46 @@ header {
 /* efecto carrito un poquito más destacado */
 .carrito-icono {
   background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== ICONOS ESTÁNDAR ===== */
+
+.iconos-footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.iconos-footer img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.iconos-footer img:hover {
+  transform: scale(1.2);
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1b032c;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }

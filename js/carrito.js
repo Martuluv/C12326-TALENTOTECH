@@ -16,7 +16,8 @@ const renderizarCarrito = () => {
   actualizarContador(carrito);
 
   if (carrito.length === 0) {
-    contenedor.innerHTML = `<p>Tu carrito está vacío 😕</p>`;
+    contenedor.innerHTML = `<p>CUAK 
+    tu carrito está vacío 😕 </p>`;
     return;
   }
 
