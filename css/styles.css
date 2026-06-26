@@ -185,31 +185,32 @@ header {
 /* -------------------------------------------------------------------------- */
 /*                                  CONTACTO                                  */
 /* -------------------------------------------------------------------------- */
-.titulo-contacto {
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 1.15;
-  text-align: center;
-  margin: 2rem 0;
-}
-.parrafo {
-  width: 60%;
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  padding: 3rem;
-}
-.form-contacto {
-  background-color: #dab7f3;
-  color: #1a022b;
-  padding: 3rem;
-  border-radius: 1rem;
+
+form {
+  background-color: #f9f6fb;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 70%;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
 
-  box-shadow: #23073d 0px 10px 20px -10px;
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #1b032c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
 }
 /* -------------------------------------------------------------------------- */
 /*                                 MEDIA QUERI                                */
@@ -305,6 +306,25 @@ header {
   background-color: #1b032c;
   color: #fff;
   padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1b032c;
+  color: white;
+  padding: 12px 18px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   opacity: 0;
