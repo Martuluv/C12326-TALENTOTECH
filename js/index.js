@@ -1,4 +1,3 @@
-import { productos } from "./productos.js";
 import { agregarAlCarrito } from "./funcionesCarrito.js";
 import { obtenerCarrito } from "./storage.js";
 import { actualizarContador } from "./ui.js";
@@ -10,35 +9,59 @@ const renderizarProductos = () => {
 
   contenedor.innerHTML = "";
 
-  productos.forEach((producto) => {
-    const tarjeta = document.createElement("article");
-    tarjeta.classList.add("card", "text-dark");
+  // 🟢 1. Traer productos locales
+  fetch("./data/productos.json")
+    .then((resLocal) => resLocal.json())
+    .then((productosLocales) => {
+      // 🌐 2. Traer API
+      fetch("https://fakestoreapi.com/products")
+        .then((resApi) => resApi.json())
+        .then((productosApi) => {
+          // 🔄 3. Adaptar API al mismo formato
+          const apiAdaptada = productosApi.map((p) => ({
+            id: p.id,
+            nombre: p.title,
+            precio: p.price,
+            img: p.image,
+          }));
 
-    const img = document.createElement("img");
-    img.src = producto.img;
-    img.alt = producto.nombre;
+          // 🔗 4. Unir productos (tuyos primero)
+          const todosLosProductos = [...productosLocales, ...apiAdaptada];
 
-    const titulo = document.createElement("h3");
-    titulo.textContent = producto.nombre;
+          // 🖼️ 5. Renderizar
+          todosLosProductos.forEach((producto) => {
+            const tarjeta = document.createElement("article");
+            tarjeta.classList.add("card", "text-dark");
 
-    const precio = document.createElement("p");
-    precio.textContent = `$${producto.precio}`;
+            const img = document.createElement("img");
+            img.src = producto.img;
+            img.alt = producto.nombre;
 
-    const boton = document.createElement("button");
-    boton.textContent = "Agregar al carrito";
-    boton.classList.add("btn", "btn-primary");
+            const titulo = document.createElement("h3");
+            titulo.textContent = producto.nombre;
 
-    boton.addEventListener("click", () => {
-      agregarAlCarrito(producto);
-    });
+            const precio = document.createElement("p");
+            precio.textContent = `$${producto.precio}`;
 
-    tarjeta.appendChild(img);
-    tarjeta.appendChild(titulo);
-    tarjeta.appendChild(precio);
-    tarjeta.appendChild(boton);
+            const boton = document.createElement("button");
+            boton.textContent = "Agregar al carrito";
+            boton.classList.add("btn", "btn-primary");
 
-    contenedor.appendChild(tarjeta);
-  });
+            boton.addEventListener("click", () => {
+              agregarAlCarrito(producto);
+            });
+
+            tarjeta.appendChild(img);
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(precio);
+            tarjeta.appendChild(boton);
+
+            contenedor.appendChild(tarjeta);
+          });
+        })
+        .catch((error) => console.error("Error API:", error));
+    })
+    .catch((error) => console.error("Error JSON local:", error));
 };
 
 document.addEventListener("DOMContentLoaded", () => {

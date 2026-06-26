@@ -136,33 +136,38 @@ header {
 }
 
 .contenedor-tarjetas {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-items: stretch;
 }
 
 .card {
   background-color: #f9f6fb;
   color: #23073d;
-  width: 40rem;
+
+  width: 100%;
 
   border-radius: 1rem;
   overflow: hidden;
 
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 
   padding-bottom: 2rem;
 
   box-shadow: #23073d 0px 10px 20px -10px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .card img {
   width: 100%;
-  height: 60rem;
+  height: 220px;
   object-fit: cover;
 }
 /* -------------------------------------------------------------------------- */
@@ -203,4 +208,28 @@ header {
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+/* ===== EFECTO ZOOM PRODUCTOS ===== */
+
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
 }
